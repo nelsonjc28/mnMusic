@@ -1,9 +1,11 @@
 import Vue from 'vue'
+Vue.use(require('vue-moment'));
 import App from './App.vue'
 import Home from './Home.vue'
 import Expresiones from './Expresiones.vue'
 import Directivas from './Dirrectivas.vue'
 import Interpolacion from './Interpolacion.vue'
+import Computed from './Computed.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -23,5 +25,5 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  render: h => h(Interpolacion)
+  render: h => h(Computed)
 })
