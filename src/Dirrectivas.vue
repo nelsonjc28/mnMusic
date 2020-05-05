@@ -1,11 +1,12 @@
 <template lang="pug">
-  p(v-show="showValue") {{ value}}
-  p(v-if="showValue") {{ value}}
-  p(v-else-if="false") {{ 'algo mas'}}
-  p(v-else) {{ 'lo ultimo'}}
+  #app
+      p(v-show="showValue") {{ value}}
+      p(v-if="showValue") {{ value}}
+      p(v-else-if="false") {{ 'algo mas'}}
+      p(v-else) {{ 'lo ultimo'}}
 
-  ul
-      li(v-for="item in items") {{item}}
+      ul
+          li(v-for="item in items") {{item}}
 </template>
 
 <script>
