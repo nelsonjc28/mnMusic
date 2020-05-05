@@ -7,6 +7,7 @@ import Directivas from './Dirrectivas.vue'
 import Interpolacion from './Interpolacion.vue'
 import Computed from './Computed.vue'
 import CalcAge from './CalcAge.vue'
+import Watchers from './Watchers.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -26,5 +27,5 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  render: h => h(CalcAge)
+  render: h => h(Watchers)
 })
