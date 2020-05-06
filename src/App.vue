@@ -1,43 +1,51 @@
 <template lang="pug">
   #app
-      div(class="container")
+      section.section
+          nav.nav.has-shadow
+              .container
+                  .columns.is-multiline
+                      .column.is-11
+                          input.input.is-large(type="text" ṕlaceholder="buscar" v-model="searchQuery")
+                      .column.is-1
+                          .field.has-addons
+                              a.button.is-primary.is-large(@click="search") Buscar
+                              a.button.is-danger.is-large &times
+                      .column
+                          p.small {{searchMessage}}
 
-          div(class="columns")
+              .container
+                  .columns.is-multiline
+                     .column.is-12(v-for="track in tracks" ) {{track.name}} - {{track.artist}}
 
-              div(class="card column is-4 is-offset-4 is-vcentered")
-                  div(class="card-body")
-                      div(class="card-image")
-                          img(src="./assets/platzi.png")
-
-                      p(class="title is-4")  Registro estacion platzi
-
-                      form
-                           div(class="field")
-                               label(class="label") Nombre
-                               div(class="control")
-                                   input(class="input is-success" type="text" name="nombre")
-
-                           div(class="field")
-                               label(class="label") Apellido
-                               div(class="control")
-                                   input(class="input is-success" type="text" name="apellido")
-
-                           div(class="field")
-                               label(class="label") Cargo
-                               div(class="control")
-                                   input(class="input is-success" type="text" name="cargo")
-
-                  div(class="card-footer")
-                      div(class="card-footer-item")
-                              button(class="button is-primary ") Enviar
 </template>
 
 <script>
+  let tracks = [
+      {name:'cancion1',artist:'artista1'},
+      {name:'cancion2',artist:'artista2'},
+      {name:'cancion3',artist:'artista3'},
+      {name:'cancion4',artist:'artista4'},
+      {name:'cancion5',artist:'artista5'},
+      {name:'cancion6',artist:'artista6'},
+    ]
 export default {
-  name: 'app',
+  name: 'app' ,
   data () {
     return {
-      msg: 'Hola mundo desde vue'
+      msg: 'Hola mundo desde vue',
+      searchQuery: '',
+      tracks: []
+    }
+  },
+  methods:{
+    search(){
+      this.tracks = tracks
+      console.log(this.searchQuery)
+    }
+  },
+  computed:{
+    searchMessage(){
+      return `Encontrados ${this.tracks.length}`
     }
   }
 }

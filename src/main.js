@@ -1,6 +1,7 @@
 import Vue from 'vue'
 Vue.use(require('vue-moment'));
 import App from './App.vue'
+import Login from './Login.vue'
 import Home from './Home.vue'
 import Expresiones from './Expresiones.vue'
 import Directivas from './Dirrectivas.vue'
@@ -28,5 +29,5 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 new Vue({
   el: '#app',
-  render: h => h(Eventos)
+  render: h => h(App)
 })
