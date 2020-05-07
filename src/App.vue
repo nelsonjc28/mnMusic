@@ -1,5 +1,6 @@
 <template lang="pug">
   #app
+      header-component
       section.section
           nav.nav.has-shadow
               .container
@@ -18,12 +19,16 @@
                      .column.is-12(v-for="track in tracks" )
                         | {{track.name}} - {{track.artists[0].name}}
 
+      footer-component
 
 </template>
 
 <script>
 
   import trackService from "./services/track";
+  import HeaderComponent from "./Components/Layout/Header";
+  import FooterComponent from "./Components/Layout/FooterComponent";
+
 
   export default {
     name: 'app',
@@ -49,6 +54,10 @@
       searchMessage() {
         return `Encontrados ${this.tracks.length}`
       }
+    },
+    components:{
+      FooterComponent,
+      HeaderComponent
     }
   }
 </script>

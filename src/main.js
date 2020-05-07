@@ -20,12 +20,14 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
 import {faCog} from '@fortawesome/free-solid-svg-icons'
+import {faPlay} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faHome)
 library.add(faFire)
 library.add(faHeart)
 library.add(faCog)
+library.add(faPlay)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('VueTimepicker', VueTimepicker)
