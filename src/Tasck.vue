@@ -59,62 +59,87 @@
               .tag.are-large
                   span.tag.is-primary(v-if="countTasks") {{totalHours}}
 
+
 </template>
 
 <script>
 
   export default {
-  name: 'Task' ,
-  data () {
-    return {
-      name: 'Nelson Castillo',
-      tasks: [
-      ],
-      newTask: {
-        name:'',
-        time:0
-      }
+    name: 'Task',
+    data() {
+      return {
+        name: 'Nelson Castillo',
+        tasks: [],
+        newTask: {
+          name: '',
+          time: 0
+        }
 
 
-    }
-  },
-  methods:{
-    clear(){
-      this.newTask.name = ''
-      this.newTask.time =0
-    },
-    save(){
-      if (this.newTask.name !='' && this.newTask.time !=0)
-      {
-        let task = {name:this.newTask.name,time:this.newTask.time}
-        this.tasks.push(task)
-        this.clear()
       }
     },
-    deleted(index){
+    mounted() {
 
-      this.tasks.splice(index,1)
+      this.getLocalstorageTasks()
 
-    }
-  },
-  computed:{
-    countTasks(){
-      return this.tasks.length
     },
-    totalHours(){
-      let totalHours = 0
-      if(this.tasks.length){
-        totalHours += this.tasks.map((task)=>{return task.time})
-        return `Tiempo trabajado ${totalHours} h`
+    methods: {
+      clear() {
+        this.newTask.name = ''
+        this.newTask.time = 0
+      },
+
+      save() {
+        if (this.newTask.name != '' && this.newTask.time != 0) {
+          let task = {name: this.newTask.name, time: this.newTask.time}
+          this.tasks.push(task)
+          this.setTasksLocalstorage()
+          this.clear()
+        }
+      },
+
+      setTasksLocalstorage() {
+        localStorage.setItem('tasks', JSON.stringify(this.tasks))
+      },
+
+      deleted(index) {
+        this.tasks.splice(index, 1)
+        this.removeLocalstorageTasks()
+      },
+
+      removeLocalstorageTasks() {
+        localStorage.removeItem('tasks')
+        this.setTasksLocalstorage()
+      },
+
+      getLocalstorageTasks() {
+        if (localStorage.getItem('tasks')) {
+          this.tasks = JSON.parse(localStorage.getItem('tasks'))
+        }
+
       }
-    }
-  },
-}
+    },
+
+    computed: {
+      countTasks() {
+        return this.tasks.length
+      },
+
+      totalHours() {
+        let totalHours = 0
+        if (this.tasks.length) {
+          this.tasks.forEach((task) => {
+            return totalHours += parseInt(task.time)
+          })
+          return `Tiempo trabajado ${totalHours} h`
+        }
+      }
+    },
+  }
 </script>
 
 <style lang="scss">
-@import "./scss/main.scss";
-
+  @import "./scss/main.scss";
 
 
 </style>
