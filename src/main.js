@@ -1,5 +1,7 @@
 import Vue from 'vue'
 Vue.use(require('vue-moment'));
+import 'vue2-timepicker/dist/VueTimepicker.css'
+import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
 import App from './App.vue'
 import Login from './Login.vue'
 import Home from './Home.vue'
@@ -10,6 +12,8 @@ import Computed from './Computed.vue'
 import CalcAge from './CalcAge.vue'
 import Watchers from './Watchers.vue'
 import Eventos from './Eventos.vue'
+import Agenda from './Agenda.vue'
+import Task from './Tasck.vue'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
@@ -24,10 +28,15 @@ library.add(faHeart)
 library.add(faCog)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('VueTimepicker', VueTimepicker)
 
 
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(Task),
+  component:{
+    VueTimepicker
+  }
+
 })
