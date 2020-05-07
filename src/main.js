@@ -34,7 +34,7 @@ Vue.component('VueTimepicker', VueTimepicker)
 
 new Vue({
   el: '#app',
-  render: h => h(Task),
+  render: h => h(App),
   component:{
     VueTimepicker
   }

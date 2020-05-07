@@ -15,45 +15,46 @@
 
               .container
                   .columns.is-multiline
-                     .column.is-12(v-for="track in tracks" ) {{track.name}} - {{track.artist}}
+                     .column.is-12(v-for="track in tracks" )
+                        | {{track.name}} - {{track.artists[0].name}}
+
 
 </template>
 
 <script>
-  let tracks = [
-      {name:'cancion1',artist:'artista1'},
-      {name:'cancion2',artist:'artista2'},
-      {name:'cancion3',artist:'artista3'},
-      {name:'cancion4',artist:'artista4'},
-      {name:'cancion5',artist:'artista5'},
-      {name:'cancion6',artist:'artista6'},
-    ]
-export default {
-  name: 'app' ,
-  data () {
-    return {
-      msg: 'Hola mundo desde vue',
-      searchQuery: '',
-      tracks: []
-    }
-  },
-  methods:{
-    search(){
-      this.tracks = tracks
-      console.log(this.searchQuery)
-    }
-  },
-  computed:{
-    searchMessage(){
-      return `Encontrados ${this.tracks.length}`
+
+  import trackService from "./services/track";
+
+  export default {
+    name: 'app',
+    data() {
+      return {
+        msg: 'Hola mundo desde vue',
+        searchQuery: '',
+        tracks: []
+      }
+    },
+    methods: {
+      search() {
+        if (this.searchQuery) {
+          trackService.search(this.searchQuery)
+            .then(res => {
+              this.tracks = res.tracks.items
+            })
+        }
+
+      }
+    },
+    computed: {
+      searchMessage() {
+        return `Encontrados ${this.tracks.length}`
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">
-@import "./scss/main.scss";
-
+  @import "./scss/main.scss";
 
 
 </style>
