@@ -25,6 +25,7 @@
 
 
 
+
 </template>
 
 <script>
@@ -35,7 +36,7 @@
     },
     methods: {
       selectTracky() {
-        this.$emit('selectTrack',this.track.id)
+        this.$emit('selectTrack', this.track.id)
       }
     },
     computed: {

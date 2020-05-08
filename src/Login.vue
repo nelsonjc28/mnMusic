@@ -30,22 +30,22 @@
                   div(class="card-footer")
                       div(class="card-footer-item")
                               button(class="button is-primary ") Enviar
+
 </template>
 
 <script>
-export default {
-  name: 'login' ,
-  data () {
-    return {
-      msg: 'Hola mundo desde vue'
+  export default {
+    name: 'login',
+    data() {
+      return {
+        msg: 'Hola mundo desde vue'
+      }
     }
   }
-}
 </script>
 
 <style lang="scss">
-@import "./scss/main.scss";
-
+  @import "./scss/main.scss";
 
 
 </style>

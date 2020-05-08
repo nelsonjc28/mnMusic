@@ -4,9 +4,10 @@
           h1 Cargando ...
 
 
+
 </template>
 <style lang="scss" scoped>
-  .content{
+  .content {
     padding: 20px;
     min-height: 40vh;
   }

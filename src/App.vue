@@ -24,9 +24,10 @@
       footer-component
 
 
+
 </template>
 
-<script >
+<script>
 
   import trackService from "@/services/track";
   import HeaderComponent from "@/Components/Layout/Header";
@@ -62,7 +63,7 @@
         this.searchQuery = ""
         this.tracks = []
       },
-      setSelectedTrack(id){
+      setSelectedTrack(id) {
         this.selectedTrack = id
       }
 
@@ -80,14 +81,15 @@
   }
 </script>
 
-<style lang="scss" >
+<style lang="scss">
   @import "./scss/main.scss";
 
   .spiner-centered {
     position: relative;
     left: 85px;
   }
-  .is-active{
+
+  .is-active {
     border: 3px #48c774 solid;
   }
 </style>

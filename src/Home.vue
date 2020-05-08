@@ -92,35 +92,35 @@
             </div>
           </div>
 
-        <div class="box column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+          <div class="box column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
+
           </div>
 
-        </div>
-
-        <div class="box  column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+          <div class="box  column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
         <div class="columns">
           <div class="column is-12">
             <div class="content">
@@ -134,50 +134,50 @@
 
         <div class="columns is-3">
 
-        <div class="box  column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+          <div class="box  column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box  column is-4">
+            <img src="./assets/pelicula.png" class="image">
+
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="box column is-4">
+            <img src="./assets/pelicula.png" class="image">
+
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="box  column is-4">
-          <img src="./assets/pelicula.png" class="image">
-
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="box column is-4">
-          <img src="./assets/pelicula.png" class="image">
-
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
         <div class="columns">
           <div class="column is-12">
@@ -188,50 +188,50 @@
 
           </div>
         </div>
-      <div class="columns">
-        <div class="box column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+        <div class="columns">
+          <div class="box column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="box column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+          <div class="box column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="box column is-4">
-          <img src="./assets/pelicula.png" class="image">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
-                egestas. Nullam condimentum luctus turpis.
-              </p>
+          <div class="box column is-4">
+            <img src="./assets/pelicula.png" class="image">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla
+                  egestas. Nullam condimentum luctus turpis.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     </div>
 
