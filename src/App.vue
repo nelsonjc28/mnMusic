@@ -16,17 +16,17 @@
 
               .container
                   .columns.is-multiline
-                     .column.is-2.is-vcentered.is-offset-5
-                            propagate-loader.span-centered(color="#48c774" :size="30" :loading="isLoading")
+                     .column.is-2.is-vcentered.is-offset-5(v-if="isLoading")
+                            propagate-loader.spiner-centered(color="#48c774" :size="30" :loading="isLoading")
                      .column.is-4(v-for="track in tracks" )
-                          track-component(:track="track")
+                          track-component(:class="{'is-active': track.id === selectedTrack}" :track="track" @selectTrack="setSelectedTrack")
 
       footer-component
 
 
 </template>
 
-<script>
+<script >
 
   import trackService from "@/services/track";
   import HeaderComponent from "@/Components/Layout/Header";
@@ -41,7 +41,8 @@
         msg: 'Hola mundo desde vue',
         searchQuery: '',
         tracks: [],
-        isLoading: false
+        isLoading: false,
+        selectedTrack: ''
       }
     },
     methods: {
@@ -60,6 +61,9 @@
       clear() {
         this.searchQuery = ""
         this.tracks = []
+      },
+      setSelectedTrack(id){
+        this.selectedTrack = id
       }
 
     },
@@ -76,12 +80,14 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
   @import "./scss/main.scss";
 
-  .span-centered {
+  .spiner-centered {
     position: relative;
     left: 85px;
-
+  }
+  .is-active{
+    border: 3px #48c774 solid;
   }
 </style>

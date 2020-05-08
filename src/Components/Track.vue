@@ -21,7 +21,8 @@
                       .level-left
                           a.level-item
                               span.icon.is-small
-                                  font-awesome-icon(icon="play")
+                                  font-awesome-icon(icon="play" @click="selectTracky")
+
 
 
 </template>
@@ -32,13 +33,18 @@
     props: {
       track: {type: Object, required: true}
     },
+    methods: {
+      selectTracky() {
+        this.$emit('selectTrack',this.track.id)
+      }
+    },
     computed: {
       duration() {
         let minutes = this.track.duration_ms / 60000
         return `${minutes.toFixed(2)} min`
 
       }
-    }
+    },
   }
 </script>
 
