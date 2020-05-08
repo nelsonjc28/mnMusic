@@ -15,6 +15,11 @@ import Eventos from './Eventos.vue'
 import Agenda from './Agenda.vue'
 import Task from './Tasck.vue'
 
+import { VueSpinners } from '@saeris/vue-spinners'
+
+Vue.use(VueSpinners)
+
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faFire } from '@fortawesome/free-solid-svg-icons'
