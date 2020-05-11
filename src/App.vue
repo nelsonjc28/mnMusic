@@ -1,6 +1,8 @@
 <template lang="pug">
   #app
       header-component
+      notification(v-if="showNotification")
+          p(slot='body') No se encontraron resultados
       section.section
           nav.nav.has-shadow
               .container
@@ -25,6 +27,8 @@
 
 
 
+
+
 </template>
 
 <script>
@@ -33,7 +37,7 @@
   import HeaderComponent from "@/Components/Layout/Header";
   import TrackComponent from "@/Components/Track";
   import FooterComponent from "@/Components/Layout/FooterComponent";
-
+  import Notification from "@/Components/Shared/NotificationComponent";
 
   export default {
     name: 'app',
@@ -43,6 +47,7 @@
         searchQuery: '',
         tracks: [],
         isLoading: false,
+        showNotification: false,
         selectedTrack: ''
       }
     },
@@ -56,9 +61,16 @@
             .then(res => {
               this.isLoading = false
               this.tracks = res.tracks.items
+              this.isNotification(res.tracks.total)
             })
         }
       },
+      isNotification(total) {
+        if (total === 0) {
+          this.showNotification = true
+        }
+      },
+
       clear() {
         this.searchQuery = ""
         this.tracks = []
@@ -73,10 +85,18 @@
         return `Encontrados ${this.tracks.length}`
       }
     },
+    watch: {
+      showNotification() {
+        if (this.showNotification) {
+          setTimeout(() => this.showNotification = false, 3000)
+        }
+      },
+    },
     components: {
       FooterComponent,
       HeaderComponent,
       TrackComponent,
+      Notification,
     }
   }
 </script>
