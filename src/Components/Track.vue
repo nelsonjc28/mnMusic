@@ -37,6 +37,7 @@
     methods: {
       selectTracky() {
         this.$emit('selectTrack', this.track.id)
+        this.$bus.$emit('set-track',this.track)
       }
     },
     computed: {
