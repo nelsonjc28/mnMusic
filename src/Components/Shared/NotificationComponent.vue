@@ -2,7 +2,7 @@
 
       .container
           .columns
-              .column.is-5.ofset-4
+              .column.is-5
               .notification.is-danger
                   slot(name="body") Algo anduvo mal
 

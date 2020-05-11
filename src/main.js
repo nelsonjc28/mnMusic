@@ -3,6 +3,8 @@ import Vue from 'vue'
 Vue.use(require('vue-moment'));
 import 'vue2-timepicker/dist/VueTimepicker.css'
 import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-default.css';
 import App from './App.vue'
 import Login from './Login.vue'
 import Home from './Home.vue'
@@ -19,7 +21,10 @@ import Task from './Tasck.vue'
 import {VueSpinners} from '@saeris/vue-spinners'
 
 Vue.use(VueSpinners)
-
+Vue.use(VueToast, {
+  // One of options
+  position: 'top-right'
+});
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faHome} from '@fortawesome/free-solid-svg-icons'

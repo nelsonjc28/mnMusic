@@ -51,6 +51,8 @@
         selectedTrack: ''
       }
     },
+    mounted() {
+    },
     methods: {
       search() {
         if (this.searchQuery) {
@@ -68,6 +70,9 @@
       isNotification(total) {
         if (total === 0) {
           this.showNotification = true
+
+          this.$toast.error('No se encontraron resultados!');
+
         }
       },
 
@@ -89,6 +94,9 @@
       showNotification() {
         if (this.showNotification) {
           setTimeout(() => this.showNotification = false, 3000)
+
+
+
         }
       },
     },
