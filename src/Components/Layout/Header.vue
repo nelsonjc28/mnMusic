@@ -17,12 +17,14 @@
                 h2.subtitle Canciones que estan vue-nisimas!
                  player-component
 
+
 </template>
 <script>
   import PlayerComponent from "@/Components/PlayerComponent";
+
   export default {
-components:{
-  PlayerComponent
-}
+    components: {
+      PlayerComponent
+    }
   }
 </script>

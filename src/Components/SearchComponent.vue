@@ -28,6 +28,7 @@
 
 
 
+
 </template>
 
 <script>
@@ -40,13 +41,13 @@
     name: 'SearchComponent',
     data() {
       return {
-        notificationMsg:'',
+        notificationMsg: '',
         searchQuery: '',
         tracks: [],
         isLoading: false,
         showNotification: false,
         selectedTrack: '',
-        isSuccessNotification:false
+        isSuccessNotification: false
       }
     },
     mounted() {
@@ -70,7 +71,7 @@
         if (total === 0) {
           this.$toast.error('No se encontraron resultados!');
           this.notificationMsg = 'No se encontraron resultados!'
-        }else {
+        } else {
           this.$toast.success(`${total} resultados encontrados!`);
           this.notificationMsg = `${total} resultados encontrados!`
           this.isSuccessNotification = true

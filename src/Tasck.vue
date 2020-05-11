@@ -60,6 +60,7 @@
                   span.tag.is-primary(v-if="countTasks") {{totalHours}}
 
 
+
 </template>
 
 <script>

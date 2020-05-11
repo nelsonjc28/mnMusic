@@ -20,6 +20,7 @@ import 'vue2-timepicker/dist/VueTimepicker.css'
 import {VueSpinners} from '@saeris/vue-spinners'
 import eventBus from "@/Plugins/Event-bus";
 import router from "@/routes";
+
 Vue.use(eventBus);
 
 

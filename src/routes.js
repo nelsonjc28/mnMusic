@@ -6,8 +6,8 @@ Vue.use(Router)
 
 
 export default new Router({
-  routes : [
-    {path:'/', component: SearchComponent, name:'search'}
+  routes: [
+    {path: '/', component: SearchComponent, name: 'search'}
 
   ]
 })
