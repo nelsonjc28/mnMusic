@@ -3,14 +3,26 @@
       .container
           .columns
               .column.is-5
-              .notification.is-danger
+              .notification(:class="typeNotification")
                   slot(name="body") Algo anduvo mal
 
 </template>
 
 <script>
     export default {
-        name: "NotificationComponent"
+        name: "NotificationComponent",
+      props:{
+          isSuccess:false
+      },
+      computed:{
+          typeNotification(){
+            if(this.isSuccess){
+              return 'is-success'
+            }
+            return 'is-danger'
+          }
+
+      }
     }
 </script>
 

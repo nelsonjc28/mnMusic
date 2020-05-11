@@ -1,8 +1,8 @@
 <template lang="pug">
   #app
       header-component
-      notification(v-if="showNotification")
-          p(slot='body') No se encontraron resultados
+      notification(v-if="showNotification" :isSuccess="isSuccessNotification" )
+          p(slot='body') {{notificationMsg}}
       section.section
           nav.nav.has-shadow
               .container
@@ -43,12 +43,13 @@
     name: 'app',
     data() {
       return {
-        msg: 'Hola mundo desde vue',
+        notificationMsg:'',
         searchQuery: '',
         tracks: [],
         isLoading: false,
         showNotification: false,
-        selectedTrack: ''
+        selectedTrack: '',
+        isSuccessNotification:false
       }
     },
     mounted() {
@@ -68,10 +69,14 @@
         }
       },
       isNotification(total) {
+        this.showNotification = true
         if (total === 0) {
-          this.showNotification = true
-
           this.$toast.error('No se encontraron resultados!');
+          this.notificationMsg = 'No se encontraron resultados!'
+        }else {
+          this.$toast.success(`${total} resultados encontrados!`);
+          this.notificationMsg = `${total} resultados encontrados!`
+          this.isSuccessNotification = true
 
         }
       },
@@ -93,10 +98,12 @@
     watch: {
       showNotification() {
         if (this.showNotification) {
-          setTimeout(() => this.showNotification = false, 3000)
+          setTimeout(() => {
+            this.showNotification = false
+            this.notificationMsg = ''
+            this.isSuccessNotification = false
 
-
-
+          }, 3000)
         }
       },
     },
