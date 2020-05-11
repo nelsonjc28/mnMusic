@@ -19,7 +19,10 @@ import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
 import 'vue2-timepicker/dist/VueTimepicker.css'
 import {VueSpinners} from '@saeris/vue-spinners'
 import eventBus from "@/Plugins/Event-bus";
+import router from "@/routes";
 Vue.use(eventBus);
+
+
 Vue.use(require('vue-moment'));
 
 Vue.use(VueSpinners)
@@ -50,6 +53,7 @@ Vue.component('VueTimepicker', VueTimepicker)
 new Vue({
   el: '#app',
   render: h => h(App),
+  router,
   component: {
     VueTimepicker
   }

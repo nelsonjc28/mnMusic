@@ -1,13 +1,13 @@
 <template lang="pug">
     .content
         p.is128x128
-            img(:src="track.album.images[0].url")
+            img(v-if="track && track.album",:src="track.album.images[0].url")
         p
             strong {{track.name}}
             small {{duration}}
 
         p
-            audio(controls, :src="previewSound")
+            audio( v-if="track && track.album", controls, :src="previewSound")
 </template>
 
 <script>
@@ -25,8 +25,11 @@
       },
       computed:{
         duration() {
-          let minutes = this.track.duration_ms / 60000
-          return ` ${minutes.toFixed(2)} min`
+          if(this.track.duration_ms){
+            let minutes = this.track.duration_ms / 60000
+            return ` ${minutes.toFixed(2)} min`
+          }
+          return ``
 
         },
         previewSound(){
