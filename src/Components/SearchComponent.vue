@@ -8,7 +8,7 @@
               .container
                   .columns.is-multiline
                       .column.is-11
-                          input.input.is-large(type="text" ṕlaceholder="buscar" v-model="searchQuery")
+                          input.input.is-large(type="text" ṕlaceholder="buscar" v-model="searchQuery", @keyup.enter="search")
                       .column.is-1
                           .field.has-addons
                               a.button.is-primary.is-large(@click="search") Buscar
