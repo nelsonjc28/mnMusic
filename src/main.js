@@ -10,10 +10,15 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
 import 'vue2-timepicker/dist/VueTimepicker.css'
 import eventBus from "@/Plugins/Event-bus";
+import MsToMm from "@/Filters/MsToMm";
+import Blur from "@/Directives/Blur";
 import router from "@/routes";
 
 Vue.use(eventBus);
 
+Vue.use(MsToMm);
+
+Vue.use(Blur);
 
 Vue.use(require('vue-moment'));
 

@@ -4,7 +4,7 @@
             img(:src="track.album.images[0].url")
         p
             strong {{track.name}}
-            small {{duration}}
+            small {{track.duration_ms | ms-to-mm}}
 
         p
             audio(  controls, :src="previewSound")
@@ -26,14 +26,6 @@
       }
     },
     computed: {
-      duration() {
-        if (this.track.duration_ms) {
-          let minutes = this.track.duration_ms / 60000
-          return ` ${minutes.toFixed(2)} min`
-        }
-        return ``
-
-      },
       previewSound() {
 
         if (this.track.preview_url) {

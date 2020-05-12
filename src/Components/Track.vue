@@ -16,13 +16,13 @@
                   p.subtitle.is-6 {{track.artists[0].name}}
 
           .container
-              .small {{duration}}
+              .small {{track.duration_ms | ms-to-mm}}
                   nav.level
                       .level-left
-                          a.level-item
+                          button.level-item.button.is-primary
                               span.icon.is-small
                                   font-awesome-icon(icon="play" @click="selectTracky")
-                          a.level-item
+                          button.level-item.button.is-info
                               span.icon.is-small
                                   font-awesome-icon(icon="info" @click="goToTrack(track.id)")
 
@@ -41,20 +41,20 @@
     },
     methods: {
       selectTracky() {
+        if(!this.track.preview_url) {
+          return
+        }
         this.$emit('selectTrack', this.track.id)
         this.$bus.$emit('set-track', this.track)
       },
       goToTrack(id) {
+        if(!this.track.preview_url) {
+          return
+        }
         this.$router.push({name: "track", params: {id}})
       }
     },
-    computed: {
-      duration() {
-        let minutes = this.track.duration_ms / 60000
-        return `${minutes.toFixed(2)} min`
 
-      }
-    },
   }
 </script>
 
