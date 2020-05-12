@@ -9,6 +9,7 @@
         p
             audio(  controls, :src="previewSound")
 
+
 </template>
 
 <script>

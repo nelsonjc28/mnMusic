@@ -1,6 +1,6 @@
 <template lang="pug">
 
-  .card
+  .card(v-if="track && track.album")
       .card-image
           figure.image.is-1by1
               img(:src="track.album.images[1].url")
@@ -22,6 +22,10 @@
                           a.level-item
                               span.icon.is-small
                                   font-awesome-icon(icon="play" @click="selectTracky")
+                          a.level-item
+                              span.icon.is-small
+                                  font-awesome-icon(icon="info" @click="goToTrack(track.id)")
+
 
 
 
@@ -39,6 +43,9 @@
       selectTracky() {
         this.$emit('selectTrack', this.track.id)
         this.$bus.$emit('set-track', this.track)
+      },
+      goToTrack(id) {
+        this.$router.push({name: "track", params: {id}})
       }
     },
     computed: {
