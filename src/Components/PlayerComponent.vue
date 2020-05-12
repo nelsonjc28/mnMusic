@@ -1,13 +1,13 @@
 <template lang="pug">
-    .content
+    .content(v-if="track && track.album")
         p.is128x128
-            img(v-if="track && track.album",:src="track.album.images[0].url")
+            img(:src="track.album.images[0].url")
         p
             strong {{track.name}}
             small {{duration}}
 
         p
-            audio( v-if="track && track.album", controls, :src="previewSound")
+            audio(  controls, :src="previewSound")
 
 </template>
 
