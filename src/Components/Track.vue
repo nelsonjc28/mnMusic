@@ -31,6 +31,7 @@
 
 
 
+
 </template>
 
 <script>
@@ -41,14 +42,14 @@
     },
     methods: {
       selectTracky() {
-        if(!this.track.preview_url) {
+        if (!this.track.preview_url) {
           return
         }
         this.$emit('selectTrack', this.track.id)
         this.$bus.$emit('set-track', this.track)
       },
       goToTrack(id) {
-        if(!this.track.preview_url) {
+        if (!this.track.preview_url) {
           return
         }
         this.$router.push({name: "track", params: {id}})
