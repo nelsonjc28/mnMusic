@@ -1,7 +1,9 @@
 <template lang="pug">
    main
-      notification(v-if="showNotification" :isSuccess="isSuccessNotification" )
-          p(slot='body') {{notificationMsg}}
+      transition(name="move")
+
+          notification(v-if="showNotification" :isSuccess="isSuccessNotification" )
+              p(slot='body') {{notificationMsg}}
 
       section.section
           nav.nav.has-shadow
