@@ -5,6 +5,7 @@
             .card-body.has-text-centered
 
                 p {{count}}
+                p {{getDouble}}
 
             .card-footer
                     .field.is-6
@@ -13,11 +14,11 @@
                         button.button-left.button.is-danger(@click="disminuir") Disminuir
 
 
+
 </template>
 
 <script>
-  import {mapState} from 'vuex'
-  import {mapMutations} from 'vuex'
+  import {mapState, mapMutations, mapGetters} from 'vuex'
 
   export default {
     name: "PracticaVuex",
@@ -25,7 +26,8 @@
       ...mapMutations(['incrementar', 'disminuir'])
     },
     computed: {
-      ...mapState(['count'])
+      ...mapState(['count']),
+      ...mapGetters(['getDouble'])
     },
   }
 </script>

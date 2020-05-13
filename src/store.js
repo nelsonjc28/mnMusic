@@ -16,6 +16,11 @@ const store = new Vuex.Store({
     disminuir(state) {
       state.count -= 1
     }
+  },
+  getters: {
+    getDouble(state, getters) {
+      return state.count * 2
+    }
   }
 
 })
