@@ -9,9 +9,11 @@
 
             .card-footer
                     .field.is-6
-                        button.button-right.button.is-primary(@click="incrementar") Incrementar
+                        button.button-margin.button.is-primary(@click="incrementar") Incrementar
                     .field.is-6
-                        button.button-left.button.is-danger(@click="disminuir") Disminuir
+                        button.button-margin.button.is-danger(@click="disminuir") Disminuir
+                    .field.is-6
+                        button.button-margin.button.is-primary(@click="incrementAsync") IncrementAsync
 
 
 
@@ -23,7 +25,11 @@
   export default {
     name: "PracticaVuex",
     methods: {
-      ...mapMutations(['incrementar', 'disminuir'])
+      ...mapMutations(['incrementar', 'disminuir']),
+
+      incrementAsync() {
+        this.$store.dispatch('incrementAsync', {number: 28})
+      }
     },
     computed: {
       ...mapState(['count']),
@@ -39,12 +45,9 @@
     margin-top: 100px;
   }
 
-  .button-right {
-    margin: 60px;
+  .button-margin {
+    margin: 20px;
   }
 
-  .button-left {
-    margin: 60px;
-  }
 
 </style>
