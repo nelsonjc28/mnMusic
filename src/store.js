@@ -1,20 +1,20 @@
-import  Vue from 'vue'
-import  Vuex from 'vuex'
+import Vue from 'vue'
+import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
 
 const store = new Vuex.Store({
-  state:{
-    count:0
+  state: {
+    count: 0
   },
-  mutations:{
+  mutations: {
 
-    incrementar(state){
-      state.count +=1
+    incrementar(state) {
+      state.count += 1
     },
-    disminuir(state){
-      state.count -=1
+    disminuir(state) {
+      state.count -= 1
     }
   }
 
