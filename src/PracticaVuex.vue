@@ -28,7 +28,9 @@
       ...mapMutations(['incrementar', 'disminuir']),
 
       incrementAsync() {
-        this.$store.dispatch('incrementAsync', {number: 28})
+        this.$store.dispatch('incrementAsync', {number: 28}).then(()=>{
+          console.log('Accion terminada...')
+        })
       }
     },
     computed: {

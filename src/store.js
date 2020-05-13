@@ -25,9 +25,13 @@ const store = new Vuex.Store({
   actions: {
     incrementAsync(context, payload) {
 
-      setTimeout(() => {
-        context.commit('incrementar', payload)
-      }, 3000)
+      return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+          context.commit('incrementar', payload)
+          resolve()
+        }, 3000)
+      })
+
 
     }
   }
