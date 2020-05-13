@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import App from './App.vue'
+import Practica from './PracticaVuex.vue'
 
 
 import Spinners from '@/Plugins/Spinners'
@@ -29,7 +30,7 @@ Vue.component('VueTimepicker', VueTimepicker)
 
 new Vue({
   el: '#app',
-  render: h => h(App),
+  render: h => h(Practica),
   router,
   store,
   component: {
