@@ -19,12 +19,12 @@
               .small {{track.duration_ms | ms-to-mm}}
                   nav.level
                       .level-left
-                          button.level-item.button.is-primary
+                          button.level-item.button.is-primary(@click="selectTracky")
                               span.icon.is-small
-                                  font-awesome-icon(icon="play" @click="selectTracky")
-                          button.level-item.button.is-info
+                                  font-awesome-icon(icon="play" )
+                          button.level-item.button.is-info(@click="goToTrack(track.id)")
                               span.icon.is-small
-                                  font-awesome-icon(icon="info" @click="goToTrack(track.id)")
+                                  font-awesome-icon(icon="info" )
 
 
 
@@ -35,8 +35,12 @@
 </template>
 
 <script>
+
+  import TrackMixin from "@/Mixins/track";
+
   export default {
     name: "Track",
+    mixins:[TrackMixin],
     props: {
       track: {type: Object, required: true}
     },
