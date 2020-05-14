@@ -1,15 +1,13 @@
 <template lang="pug">
     .container
         .columns.is-multiline
-            .column.is-12(v-if="isLoading")
-                rise-loader.spiner-centered(color="#48c774" :size="30" :loading="isLoading")
 
             .column.is-3.has-text-centered
                 figure.media-left
                     p.image
                         img(v-if="track && track.album", :src="track.album.images[0].url")
                     p
-                        a.button.is-primary.is-large( @click="selectTracky")
+                        a.button.is-primary.is-large( @click="selectTrack")
                             span.icon.is-small
                                   font-awesome-icon(icon="play" )
 
@@ -17,7 +15,7 @@
             .column.is-8
                 .panel
                     .panel-heading
-                        h1.title {{track.name}}
+                        h1.title {{trackTitle}}
                     .panel-block
                         article.media
                             .media-content
@@ -35,25 +33,28 @@
 </template>
 
 <script>
-  import trackService from "@/services/track";
 import TrackMixin from "@/Mixins/track";
+import {mapState,mapActions,mapGetters} from "vuex";
   export default {
     name: "TrackDetail",
     mixins:[TrackMixin],
     created() {
+
       const id = this.$route.params.id
-      trackService.getById(id).then(res => {
-        this.track = res
-
-        this.isLoading =false
-
+    if(!this.track || !this.track.id || !this.track.id != id){
+      this.getTrackById({id}).then(()=>{
+        console.log("exito!")
       })
+
+    }
+
     },
-    data() {
-      return {
-        track: {},
-        isLoading : true
-      }
+    computed:{
+      ...mapState(["track"]),
+      ...mapGetters(["trackTitle"])
+    },
+    methods:{
+      ...mapActions(["getTrackById"])
     }
   }
 </script>
