@@ -7,33 +7,17 @@
             small {{track.duration_ms | ms-to-mm}}
 
         p
-            audio(  controls, :src="previewSound")
+            audio(  controls, :src="track.preview_url")
 
 
 </template>
 
 <script>
+  import {mapState} from  'vuex'
   export default {
     name: "PlayerComponent",
-    created() {
-      this.$bus.$on('set-track', (track) => {
-        this.track = track
-      })
-    },
-    data() {
-      return {
-        track: {}
-      }
-    },
     computed: {
-      previewSound() {
-
-        if (this.track.preview_url) {
-          return this.track.preview_url
-        }
-        return ''
-      }
-
+      ...mapState(['track']),
     }
   }
 </script>

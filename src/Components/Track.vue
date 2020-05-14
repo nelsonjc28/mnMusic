@@ -19,7 +19,7 @@
               .small {{track.duration_ms | ms-to-mm}}
                   nav.level
                       .level-left
-                          button.level-item.button.is-primary(@click="selectTracky")
+                          button.level-item.button.is-primary(@click="selectTrack")
                               span.icon.is-small
                                   font-awesome-icon(icon="play" )
                           button.level-item.button.is-info(@click="goToTrack(track.id)")
@@ -45,13 +45,6 @@
       track: {type: Object, required: true}
     },
     methods: {
-      selectTracky() {
-        if (!this.track.preview_url) {
-          return
-        }
-        this.$emit('selectTrack', this.track.id)
-        this.$bus.$emit('set-track', this.track)
-      },
       goToTrack(id) {
         if (!this.track.preview_url) {
           return

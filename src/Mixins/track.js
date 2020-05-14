@@ -1,12 +1,12 @@
 const trackMixin = {
 
   methods:{
-    selectTracky() {
+    selectTrack() {
       if (!this.track.preview_url) {
         return
       }
-      this.$emit('selectTrack', this.track.id)
-      this.$bus.$emit('set-track', this.track)
+      console.log('hi here')
+      this.$store.commit('setTrack', this.track)
     }
   }
 
