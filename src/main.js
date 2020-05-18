@@ -21,9 +21,6 @@ Vue.use(MsToMm);
 
 Vue.use(Blur);
 
-Vue.use(require('vue-moment'));
-
-
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component('VueTimepicker', VueTimepicker)
 
