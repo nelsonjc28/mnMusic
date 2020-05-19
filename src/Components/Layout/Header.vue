@@ -3,11 +3,14 @@
         .hero-head
             header.nav
                 .container
-                    .nav-left
-                        .nav-item
-                         |   Platzi music
-                    .nav-right.nav-menu
-                        .nav-item Buscar
+                  .columns
+                      .nav-left.column.is-11
+                          .nav-item.nombre
+                           |   Platzi music
+                      .nav-right.nav-menu.column.is-1
+
+                           router-link.nav-item.rutas(to="/" ) Buscar
+                           router-link.nav-item.rutas(to="about") Nosotros
         .hero-body
             .container.has-text-centered
                 h1.title
@@ -28,3 +31,14 @@
     }
   }
 </script>
+<style scoped>
+ .rutas{
+   color:#ffffff;
+   margin: 10px;
+   font-size: 1.5em;
+ }
+
+ .nombre{
+   font-size: 1.5em;
+ }
+</style>
