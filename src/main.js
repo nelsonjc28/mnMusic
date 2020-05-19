@@ -15,6 +15,8 @@ import MsToMm from "@/Filters/MsToMm";
 import Blur from "@/Directives/Blur";
 import router from "@/routes";
 import store from "@/store";
+import i18n from "@/./i18n";
+
 Vue.use(eventBus);
 
 Vue.use(MsToMm);
@@ -30,6 +32,7 @@ new Vue({
   render: h => h(App),
   router,
   store,
+  i18n,
   component: {
     VueTimepicker
   }
